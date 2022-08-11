@@ -1,6 +1,8 @@
-# Desafio FullCycle - Docker
+# Desafios Docker - Curso Full Cycle
 
-Desafio do módulo **Docker** do curso [FullCycle](https://fullcycle.com.br/). Criado por [Patrick Coutinho](https://www.linkedin.com/in/patrickcoutinho/).
+Desafios do módulo **Docker** do curso [FullCycle](https://fullcycle.com.br/). Criado por [Patrick Coutinho](https://www.linkedin.com/in/patrickcoutinho/).
+
+---
 
 ## Desafio Golang
 
@@ -11,5 +13,19 @@ Desafio do módulo **Docker** do curso [FullCycle](https://fullcycle.com.br/). C
 ```shell
 docker run --rm --name fullcycle-go patrickcoutinho/fullcycle-go 
 ```
+
+---
+
+## Desafio Nginx + Nodejs + Mysql
+
+Na pasta `node-nginx`:
+### Rode com:
+
+
+```shell
+docker-compose up -d   
+```
+
+Então acesse <http://localhost:8080>
 
 ---
