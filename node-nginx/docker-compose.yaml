@@ -26,6 +26,19 @@ services:
     networks:
       - desafio-docker-net
 
+  mysql:
+    image: mysql:8
+    container_name: mysql
+    restart: always
+    volumes: 
+      - ${PWD}/mysql/data/:/var/lib/mysql
+      - ${PWD}/mysql/init/:/docker-entrypoint-initdb.d/:ro
+    environment: 
+      - MYSQL_DATABASE=desafiodb
+      - MYSQL_ROOT_PASSWORD=root
+    networks: 
+      - desafio-docker-net
+
 networks:
   desafio-docker-net:
     driver: bridge
