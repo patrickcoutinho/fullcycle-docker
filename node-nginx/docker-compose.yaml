@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+
+  nodejs:
+    build:
+      context: ./node
+      dockerfile: Dockerfile
+    container_name: nodejs
+    restart: always
+    networks:
+      - desafio-docker-net
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: nginx
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - ${PWD}/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+    depends_on:
+      - nodejs
+    networks:
+      - desafio-docker-net
+
+networks:
+  desafio-docker-net:
+    driver: bridge
